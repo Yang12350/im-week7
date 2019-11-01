@@ -1,3 +1,12 @@
+Exercise1
+
+Min  0.1x+0.15y
+St.
+5x+10y>=45
+4x+3y>=24
+0.5x>=0.15
+x,y>=0
+
 from scipy.optimize import linprog
 import numpy as np
 C = [0.1,0.15] 
@@ -7,10 +16,7 @@ y = [3,None]
 res = linprog(C,A,B,bounds=(y))
 print(res)
 
-
-
-
-     con: array([], dtype=float64)
+  con: array([], dtype=float64)
      fun: 0.75
  message: 'Optimization terminated successfully.'
      nit: 5
