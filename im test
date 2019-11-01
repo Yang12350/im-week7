@@ -1,0 +1,20 @@
+from scipy.optimize import linprog
+import numpy as np
+C = [0.1,0.15] 
+A = [[5,10],[4,3]]
+B = np.array([45,24])
+y = [3,None]
+res = linprog(C,A,B,bounds=(y))
+print(res)
+
+
+
+
+     con: array([], dtype=float64)
+     fun: 0.75
+ message: 'Optimization terminated successfully.'
+     nit: 5
+   slack: array([0., 3.])
+  status: 0
+ success: True
+       x: array([3., 3.])
