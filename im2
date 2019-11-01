@@ -1,0 +1,27 @@
+某工廠用兩種不同的原料均可生產同一產品，若採用甲原料，每噸成本 1000 元，運費500 元，可生產出產品 90 公斤；若採用乙原料，每噸成本 1500 元，運費 400 元，可生產出產品 100 公斤。現在工廠的預算是成本不可超過 6000 元，運費不得超過 2000元，請問在此預算下，最多可生產出多少公斤的產品？
+
+Max  90x+100y
+
+ST.
+ 1000x+1500y<=6000
+ 500x+400y<=2000
+x,y>=0
+
+from scipy.optimize import linprog
+import numpy as np
+C=[-90,-100]
+A=[[1000,1500],[500,400]]
+B=np.array([6000,2000])
+res=linprog(C,A,B,bounds=(x,y))
+x = [None,None]
+y = [None,None]
+print(res)
+
+con: array([], dtype=float64)
+     fun: -440.0
+ message: 'Optimization terminated successfully.'
+     nit: 2
+   slack: array([0., 0.])
+  status: 0
+ success: True
+       x: array([1.71428571, 2.85714286])
